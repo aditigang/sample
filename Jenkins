@@ -1,0 +1,10 @@
+pipeline {
+  agent none
+      stages{
+          stage('deploy'){
+              steps{
+s3Upload(consoleLogLevel: 'INFO', dontWaitForConcurrentBuildCompletion: false, entries: [[bucket: 'ag-pipeline-deploy', excludedFile: '', flatten: false, gzipFiles: false, keepForever: false, managedArtifacts: false, noUploadOnFailure: false, selectedRegion: 'us-east-1', showDirectlyInBrowser: false, sourceFile: 'README.md', storageClass: 'STANDARD', uploadFromSlave: false, useServerSideEncryption: false]], pluginFailureResultConstraint: 'FAILURE', profileName: 'aditi-bucket', userMetadata: [])
+}
+}
+}
+}
